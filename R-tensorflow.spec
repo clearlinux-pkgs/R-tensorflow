@@ -4,7 +4,7 @@
 #
 Name     : R-tensorflow
 Version  : 1.10
-Release  : 2
+Release  : 3
 URL      : https://cran.r-project.org/src/contrib/tensorflow_1.10.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/tensorflow_1.10.tar.gz
 Summary  : R Interface to 'TensorFlow'
