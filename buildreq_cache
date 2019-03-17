@@ -1,4 +1,11 @@
 1.10
+R-Rcpp
+R-assertthat
+R-base64enc
 R-config
+R-jsonlite
+R-processx
+R-reticulate
 R-rstudioapi
 R-tfruns
+R-whisker
