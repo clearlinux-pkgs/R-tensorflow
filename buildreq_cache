@@ -1,4 +1,4 @@
-1.10
+1.13.1
 R-Rcpp
 R-assertthat
 R-base64enc
@@ -9,3 +9,4 @@ R-reticulate
 R-rstudioapi
 R-tfruns
 R-whisker
+R-yaml
