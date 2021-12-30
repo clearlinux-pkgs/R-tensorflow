@@ -4,7 +4,7 @@
 #
 Name     : R-tensorflow
 Version  : 2.7.0
-Release  : 34
+Release  : 35
 URL      : https://cran.r-project.org/src/contrib/tensorflow_2.7.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/tensorflow_2.7.0.tar.gz
 Summary  : R Interface to 'TensorFlow'
