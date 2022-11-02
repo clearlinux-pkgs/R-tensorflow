@@ -4,7 +4,7 @@
 #
 Name     : R-tensorflow
 Version  : 2.9.0
-Release  : 43
+Release  : 44
 URL      : https://cran.r-project.org/src/contrib/tensorflow_2.9.0.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/tensorflow_2.9.0.tar.gz
 Summary  : R Interface to 'TensorFlow'
