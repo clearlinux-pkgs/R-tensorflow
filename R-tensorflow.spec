@@ -4,14 +4,15 @@
 # Using build pattern: R
 #
 Name     : R-tensorflow
-Version  : 2.13.0
-Release  : 49
-URL      : https://cran.r-project.org/src/contrib/tensorflow_2.13.0.tar.gz
-Source0  : https://cran.r-project.org/src/contrib/tensorflow_2.13.0.tar.gz
+Version  : 2.14.0
+Release  : 50
+URL      : https://cran.r-project.org/src/contrib/tensorflow_2.14.0.tar.gz
+Source0  : https://cran.r-project.org/src/contrib/tensorflow_2.14.0.tar.gz
 Summary  : R Interface to 'TensorFlow'
 Group    : Development/Tools
 License  : Apache-2.0
 Requires: R-config
+Requires: R-lifecycle
 Requires: R-processx
 Requires: R-reticulate
 Requires: R-rstudioapi
@@ -19,6 +20,7 @@ Requires: R-tfautograph
 Requires: R-tfruns
 Requires: R-yaml
 BuildRequires : R-config
+BuildRequires : R-lifecycle
 BuildRequires : R-processx
 BuildRequires : R-reticulate
 BuildRequires : R-rstudioapi
@@ -54,19 +56,19 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1692117992
+export SOURCE_DATE_EPOCH=1695928835
 
 %install
-export SOURCE_DATE_EPOCH=1692117992
+export SOURCE_DATE_EPOCH=1695928835
 rm -rf %{buildroot}
-export LANG=C.UTF-8
-export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
-export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
-export AR=gcc-ar
-export RANLIB=gcc-ranlib
-export LDFLAGS="$LDFLAGS  -Wl,-z -Wl,relro"
+LANG=C.UTF-8
+CFLAGS="$CLEAR_INTERMEDIATE_CFLAGS -O3 -flto -fno-semantic-interposition "
+FCFLAGS="$CLEAR_INTERMEDIATE_FFLAGS -O3 -flto -fno-semantic-interposition "
+FFLAGS="$CLEAR_INTERMEDIATE_FFLAGS -O3 -flto -fno-semantic-interposition "
+CXXFLAGS="$CLEAR_INTERMEDIATE_CXXFLAGS -O3 -flto -fno-semantic-interposition "
+AR=gcc-ar
+RANLIB=gcc-ranlib
+LDFLAGS="$CLEAR_INTERMEDIATE_LDFLAGS  -Wl,-z -Wl,relro"
 mkdir -p %{buildroot}/usr/lib64/R/library
 
 mkdir -p ~/.R
@@ -114,6 +116,15 @@ R CMD check --no-manual --no-examples --no-codoc . || :
 /usr/lib64/R/library/tensorflow/R/tensorflow.rdx
 /usr/lib64/R/library/tensorflow/help/AnIndex
 /usr/lib64/R/library/tensorflow/help/aliases.rds
+/usr/lib64/R/library/tensorflow/help/figures/lifecycle-archived.svg
+/usr/lib64/R/library/tensorflow/help/figures/lifecycle-defunct.svg
+/usr/lib64/R/library/tensorflow/help/figures/lifecycle-deprecated.svg
+/usr/lib64/R/library/tensorflow/help/figures/lifecycle-experimental.svg
+/usr/lib64/R/library/tensorflow/help/figures/lifecycle-maturing.svg
+/usr/lib64/R/library/tensorflow/help/figures/lifecycle-questioning.svg
+/usr/lib64/R/library/tensorflow/help/figures/lifecycle-soft-deprecated.svg
+/usr/lib64/R/library/tensorflow/help/figures/lifecycle-stable.svg
+/usr/lib64/R/library/tensorflow/help/figures/lifecycle-superseded.svg
 /usr/lib64/R/library/tensorflow/help/paths.rds
 /usr/lib64/R/library/tensorflow/help/tensorflow.rdb
 /usr/lib64/R/library/tensorflow/help/tensorflow.rdx
@@ -121,6 +132,7 @@ R CMD check --no-manual --no-examples --no-codoc . || :
 /usr/lib64/R/library/tensorflow/html/R.css
 /usr/lib64/R/library/tensorflow/tests/testthat.R
 /usr/lib64/R/library/tensorflow/tests/testthat/helper-utils.R
+/usr/lib64/R/library/tensorflow/tests/testthat/setup.R
 /usr/lib64/R/library/tensorflow/tests/testthat/test-arguments.R
 /usr/lib64/R/library/tensorflow/tests/testthat/test-as_tensor.R
 /usr/lib64/R/library/tensorflow/tests/testthat/test-data-structures.R
